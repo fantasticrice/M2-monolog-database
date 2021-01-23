@@ -1,0 +1,18 @@
+{
+  "name": "fantasticrice/magento2-monolog-database",
+  "description": "Magento 2 Monolog Database - Handler for writing monolog records to a database table",
+  "keywords": ["magento 2", "monolog"],
+  "require": {
+    "php": ">=7.1",
+	"ext-json": "*",
+    "magento/framework": "100.0.*|100.1.*|101.0.*|102.0.*"
+  },
+  "type": "magento2-module",
+  "version": "0.1.0",
+  "autoload": {
+    "files": ["registration.php"],
+    "psr-4": {
+	  "Rice\\MonologDatabase\\": ""
+    }
+  }
+}
