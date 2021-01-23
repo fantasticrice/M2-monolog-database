@@ -12,7 +12,7 @@
   "autoload": {
     "files": ["registration.php"],
     "psr-4": {
-	  "Rice\\MonologDatabase\\": ""
+      "Rice\\MonologDatabase\\": ""
     }
   }
 }
