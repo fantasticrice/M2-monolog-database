@@ -1,6 +1,6 @@
 <?php
 
-namespace Lfi\Email\Logger\Handler;
+namespace Lfi\MonologDatabase\Logger\Handler;
 
 use Monolog\Logger;
 
@@ -11,8 +11,8 @@ class Database extends \Monolog\Handler\AbstractProcessingHandler
 
 
     public function __construct(
-        \Lfi\Email\Model\ResourceModel\Record $recordResource,
-        \Lfi\Email\Model\RecordFactory $recordFactory,
+        \Lfi\MonologDatabase\Model\ResourceModel\Record $recordResource,
+        \Lfi\MonologDatabase\Model\RecordFactory $recordFactory,
         $level = Logger::DEBUG,
         $bubble = true
     ) {
