@@ -1,6 +1,6 @@
 <?php
 
-namespace Rice\MonologDatabase\Api\Data;
+namespace Lfi\MonologDatabase\Api\Data;
 
 use DateTimeInterface;
 

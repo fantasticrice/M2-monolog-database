@@ -1,5 +1,5 @@
 {
-  "name": "fantasticrice/magento2-monolog-database",
+  "name": "lacrossefootwear/magento2-monolog-database",
   "description": "Magento 2 Monolog Database - Handler for writing monolog records to a database table",
   "keywords": ["magento 2", "monolog"],
   "require": {

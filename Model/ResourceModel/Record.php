@@ -1,8 +1,8 @@
 <?php
 
-namespace Rice\MonologDatabase\Model\ResourceModel;
+namespace Lfi\MonologDatabase\Model\ResourceModel;
 
-use Rice\MonologDatabase\Api\Data\RecordInterface;
+use Lfi\MonologDatabase\Api\Data\RecordInterface;
 
 class Record extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

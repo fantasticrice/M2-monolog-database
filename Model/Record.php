@@ -1,12 +1,12 @@
 <?php
 
-namespace Rice\MonologDatabase\Model;
+namespace Lfi\MonologDatabase\Model;
 
 use DateTimeInterface;
 use DateTimeImmutable;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\DataObject\IdentityInterface;
-use Lfi\Email\Api\Data\RecordInterface;
+use Lfi\MonologDatabase\Api\Data\RecordInterface;
 
 /**
  * @method setId(int $id)

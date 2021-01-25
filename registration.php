@@ -1,7 +1,7 @@
 <?php
 
-namespace Rice\MonologDatabase;
+namespace Lfi\MonologDatabase;
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Rice_MonologDatabase', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Lfi_MonologDatabase', __DIR__);
