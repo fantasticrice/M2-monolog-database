@@ -5,6 +5,7 @@
   "require": {
     "php": ">=7.1",
     "ext-json": "*",
+    "monolog/monolog": ">=1.0",
     "magento/framework": ">=102.0.0"
   },
   "type": "magento2-module",
