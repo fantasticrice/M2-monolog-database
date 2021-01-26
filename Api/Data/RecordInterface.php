@@ -17,9 +17,9 @@ interface RecordInterface
 
     /**
      * @param string $channel
-     * @return $this
+     * @return RecordInterface
      */
-    public function setChannel(string $channel);
+    public function setChannel(string $channel): RecordInterface;
 
     /**
      * @return string
@@ -28,9 +28,9 @@ interface RecordInterface
 
     /**
      * @param int $level
-     * @return $this
+     * @return RecordInterface
      */
-    public function setLevel(int $level);
+    public function setLevel(int $level): RecordInterface;
 
     /**
      * @return int
@@ -39,9 +39,9 @@ interface RecordInterface
 
     /**
      * @param string $name
-     * @return $this
+     * @return RecordInterface
      */
-    public function setLevelName(string $name);
+    public function setLevelName(string $name): RecordInterface;
 
     /**
      * @return string
@@ -50,34 +50,34 @@ interface RecordInterface
 
     /**
      * @param string $message
-     * @return $this
+     * @return RecordInterface
      */
-    public function setMessage(string $message);
+    public function setMessage(string $message): RecordInterface;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getMessage(): ?string;
 
     /**
      * @param array $context
-     * @return $this
+     * @return RecordInterface
      */
-    public function setContext(array $context);
+    public function setContext(array $context): RecordInterface;
 
     /**
-     * @return array
+     * @return array|null
      */
     public function getContext(): ?array;
 
     /**
      * @param DateTimeInterface $datetime
-     * @return $this
+     * @return RecordInterface
      */
-    public function setDatetime(DateTimeInterface $datetime);
+    public function setDatetime(DateTimeInterface $datetime): RecordInterface;
 
     /**
-     * @return DateTimeInterface
+     * @return DateTimeInterface|null
      */
-    public function getDatetime(): DateTimeInterface;
+    public function getDatetime(): ?DateTimeInterface;
 }

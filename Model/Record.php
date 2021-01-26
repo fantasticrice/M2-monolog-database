@@ -4,6 +4,7 @@ namespace Lfi\MonologDatabase\Model;
 
 use DateTimeInterface;
 use DateTimeImmutable;
+use Monolog\Logger;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\DataObject\IdentityInterface;
 use Lfi\MonologDatabase\Api\Data\RecordInterface;
@@ -31,7 +32,7 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     /**
      * {@inheritDoc}
      */
-    public function setChannel(string $channel)
+    public function setChannel(string $channel): RecordInterface
     {
         return $this->setData(self::CHANNEL, $channel);
     }
@@ -47,7 +48,7 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     /**
      * {@inheritDoc}
      */
-    public function setLevel(int $level)
+    public function setLevel(int $level): RecordInterface
     {
         return $this->setData(self::LEVEL, $level);
     }
@@ -57,13 +58,13 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
      */
     public function getLevel(): int
     {
-        return $this->getData(self::LEVEL)?? 0;
+        return $this->getData(self::LEVEL)?? Logger::DEBUG;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setLevelName(string $name)
+    public function setLevelName(string $name): RecordInterface
     {
         return $this->setData(self::LEVEL_NAME, $name);
     }
@@ -79,7 +80,7 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     /**
      * {@inheritDoc}
      */
-    public function setMessage(string $message)
+    public function setMessage(string $message): RecordInterface
     {
         return $this->setData(self::MESSAGE, $message);
     }
@@ -95,7 +96,7 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     /**
      * {@inheritDoc}
      */
-    public function setContext(array $context)
+    public function setContext(array $context): RecordInterface
     {
         $encoded = json_encode($context);
         return $this->setData(self::CONTEXT, $encoded);
@@ -108,13 +109,13 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     {
         $context = $this->getData(self::CONTEXT);
         $decoded = json_decode($context, true);
-        return $decoded;
+        return is_array($decoded)? $decoded : null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setDatetime(DateTimeInterface $datetime)
+    public function setDatetime(DateTimeInterface $datetime): RecordInterface
     {
         $formatted = $datetime->format('Y-m-d H:i:s');
         return $this->setData(self::DATETIME, $formatted);
@@ -123,10 +124,9 @@ class Record extends AbstractModel implements IdentityInterface, RecordInterface
     /**
      * {@inheritDoc}
      */
-    public function getDatetime(): DateTimeInterface
+    public function getDatetime(): ?DateTimeInterface
     {
         $value = $this->getData(self::DATETIME);
-        $datetime = new DateTimeImmutable($value);
-        return $datetime;
+        return $value? new DateTimeImmutable($value) : null;
     }
 }
