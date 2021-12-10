@@ -35,8 +35,8 @@ class Schedule extends \Magento\Framework\App\Config\Value
      */
     public function afterSave()
     {
-        $time = $this->getData('groups/productalert_cron/fields/time/value');
-        $frequency = $this->getData('groups/productalert_cron/fields/frequency/value');
+        $time = $this->getData('groups/monolog_database/fields/time/value');
+        $frequency = $this->getData('groups/monolog_database/fields/frequency/value');
 
         $cronExprArray = [
             (int)$time[1], // min
