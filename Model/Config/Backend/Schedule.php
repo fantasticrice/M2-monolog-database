@@ -3,6 +3,7 @@
 namespace Lfi\MonologDatabase\Model\Config\Backend;
 
 use Magento\Cron\Model\Config\Source\Frequency;
+use Magento\Framework\Exception\CouldNotSaveException;
 
 class Schedule extends \Magento\Framework\App\Config\Value
 {
@@ -59,7 +60,7 @@ class Schedule extends \Magento\Framework\App\Config\Value
                 ->setPath($cronModelPath)
                 ->save();
         } catch (\Exception $e) {
-            throw new \Exception(__('We can\'t save the cron expression.'));
+            throw new CouldNotSaveException(__('Failed to save cron expression: %s', $e->getMessage()));
         }
 
         return parent::afterSave();
