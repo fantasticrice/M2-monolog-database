@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="system">
+			<group id="monolog_database" translate="label" type="text" sortOrder="16" showInDefault="1">
+				<label>Record Cleaning Schedule</label>
+				<field id="frequency" translate="label" type="select" sortOrder="1" showInDefault="1">
+					<label>Frequency</label>
+					<source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+					<backend_model>Lfi\MonologDatabase\Model\Config\Backend\Schedule</backend_model>
+				</field>
+				<field id="time" translate="label" type="time" sortOrder="2" showInDefault="1">
+					<label>Record Lifetime</label>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
