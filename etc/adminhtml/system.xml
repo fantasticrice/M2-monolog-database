@@ -10,8 +10,11 @@
 					<backend_model>Lfi\MonologDatabase\Model\Config\Backend\Schedule</backend_model>
 				</field>
 				<field id="time" translate="label" type="time" sortOrder="2" showInDefault="1">
-					<label>Record Lifetime</label>
+					<label>Start Time</label>
 				</field>
+                <field id="lifetime" translate="label" type="text" sortOrder="3" showInDefault="1">
+                    <label>Record Lifetime (Days)</label>
+                </field>
 			</group>
 		</section>
 	</system>
