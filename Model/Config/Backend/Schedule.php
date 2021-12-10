@@ -31,7 +31,7 @@ class Schedule extends \Magento\Framework\App\Config\Value
 
     /**
      * {@inheritDoc}
-     * @throws \Exception
+     * @throws CouldNotSaveException
      */
     public function afterSave()
     {
