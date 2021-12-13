@@ -36,7 +36,7 @@ class Clean
      */
     public function execute(): void
     {
-        $lifetime = (int) $this->config->getValue('system/monolog_database/lifetime');
+        $lifetime = abs((int) $this->config->getValue('system/monolog_database/lifetime'));
         $conn = $this->resource->getConnection();
         $conn->delete(
             $this->resource->getMainTable(),
