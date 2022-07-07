@@ -24,7 +24,7 @@ class Database extends \Monolog\Handler\AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function write(array $record)
+    protected function write(array $record): void
     {
         $model = $this->factory->create()
             ->setChannel($record['channel'])
